@@ -23,6 +23,7 @@ const Index = () => {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
       loop: 1,
+      playlist: videoId,
     },
   };
 
