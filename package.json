@@ -1,0 +1,32 @@
+{
+  "name": "johnnybell.io",
+  "private": true,
+  "description": "Repeat YouTube",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "yarn run develop",
+    "serve": "gatsby serve"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "error-overlay-webpack-plugin": "^0.4.1",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.20.0",
+    "gatsby": "^2.21.33",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnnyxbell/johnnybell.io"
+  }
+}
