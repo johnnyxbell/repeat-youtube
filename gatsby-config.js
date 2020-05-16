@@ -13,9 +13,11 @@ module.exports = {
             family: `Rubik`,
             variants: [`200`, `400`, `600`, `800`],
           },
-          'gatsby-plugin-styled-components',
         ],
       },
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`,
     },
   ],
 };
