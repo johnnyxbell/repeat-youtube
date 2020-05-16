@@ -4,9 +4,6 @@ import styled, {createGlobalStyle} from 'styled-components';
 import BackgroundImage from '../assets/images/moshpithome.jpg';
 import Ad from '../assets/images/ad.jpg';
 import {Helmet} from 'react-helmet';
-import ReactGA from 'react-ga';
-
-ReactGA.initialize('UA-166846740-1');
 
 const GlobalStyle = createGlobalStyle`
   body {
