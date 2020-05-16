@@ -7,14 +7,15 @@ module.exports = {
         fonts: [
           {
             family: `Mukta`,
-            variants: [`200`, `400`, `600`]
+            variants: [`200`, `400`, `600`],
           },
           {
             family: `Rubik`,
-            variants: [`200`, `400`, `600`, `800`]
-          }
-        ]
-      }
-    }
-  ]
+            variants: [`200`, `400`, `600`, `800`],
+          },
+          'gatsby-plugin-styled-components',
+        ],
+      },
+    },
+  ],
 };
