@@ -108,7 +108,7 @@ const Index = () => {
       <Content>
         <h1>Repeat YouTube Videos</h1>
         <Input
-          placeholder='Put in your youtube video link'
+          placeholder='E.G. - https://www.youtube.com/watch?v=U3c0feokQc4'
           value={values.video ? values.video : ''}
           onChange={(e) => handleInputChange(e, setValues)}
           name='video'
