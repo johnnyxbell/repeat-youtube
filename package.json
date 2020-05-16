@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
+    "react-ga": "^2.7.0",
     "react-helmet": "^6.0.0",
     "react-youtube": "^7.11.2"
   }
