@@ -54,7 +54,7 @@ const Content = styled.div`
 `;
 
 const Index = () => {
-  const [values, setValues] = useState({video: 'hi'});
+  const [values, setValues] = useState({video: ''});
 
   const handleInputChange = (e, setValues) => {
     const {name, value} = e.target;
@@ -87,7 +87,6 @@ const Index = () => {
   };
 
   const _onReady = (event) => {
-    // access to player in all event handlers via event.target
     event.target.playVideo();
   };
 
