@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import YouTube from 'react-youtube';
 import styled, {createGlobalStyle} from 'styled-components';
 import BackgroundImage from '../assets/images/moshpithome.jpg';
+import Ad from '../assets/images/ad.jpg';
+import {Helmet} from 'react-helmet';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -92,6 +94,16 @@ const Index = () => {
 
   return (
     <Container>
+      <Helmet>
+        <title>
+          Repeat YouTube videos, Loop YouTube Videos, Repeat full YouTube Videos using repeat
+          YouTube.com
+        </title>
+        <meta
+          name='description'
+          content='Repeat YouTube videos is the easiest way to Listen to YouTube videos on repeat, or loop YouTube Videos'
+        />
+      </Helmet>
       <GlobalStyle />
       <Content>
         <h1>Repeat YouTube Videos</h1>
@@ -104,6 +116,16 @@ const Index = () => {
         />
         {videoId && !noId && <YouTube videoId={videoId} opts={opts} onReady={_onReady} />}
         {noId && !videoId && <p>Please use the format of https://www.youtube.com/watch?v=ID</p>}
+        <p>
+          <a
+            href='https://www.evvntly.com/?ref=repeatyoutube.dev'
+            target='_blank'
+            rel='noreferrer noopener'
+            title='Evvntly Find Events Near You'
+          >
+            <img height={150} src={Ad} alt='Evvntly' />
+          </a>
+        </p>
       </Content>
     </Container>
   );
