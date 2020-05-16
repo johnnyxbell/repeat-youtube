@@ -19,7 +19,9 @@
     <scope name="Local" pattern="file[repeat-youtube]:src//*" />
   </component>
   <component name="ProjectId" id="1bxlClF1z1rkKaKG14HdsGfC0o1" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -49,7 +51,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1589581499670</updated>
-      <workItem from="1589581500996" duration="2461000" />
+      <workItem from="1589581500996" duration="5478000" />
     </task>
     <servers />
   </component>
