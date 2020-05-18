@@ -4,6 +4,7 @@ import styled, {createGlobalStyle} from 'styled-components';
 import BackgroundImage from '../assets/images/moshpithome.jpg';
 import Ad from '../assets/images/ad.jpg';
 import {Helmet} from 'react-helmet';
+import Footer from '../components/footer';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -127,6 +128,7 @@ const Index = () => {
           </a>
         </p>
       </Content>
+      <Footer />
     </Container>
   );
 };
