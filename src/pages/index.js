@@ -138,8 +138,7 @@ const Index = () => {
     typeof window !== 'undefined' &&
     window.localStorage.getItem('videoHistory') &&
     localStorage.getItem('videoHistory').split(',');
-  const videosArray = videos.length !== 0 && new Set(videos);
-  const previousVideos = [...videosArray];
+  const videosArray = [...new Set(videos)];
 
   return (
     <Container>
@@ -165,11 +164,11 @@ const Index = () => {
         />
         {videoId && !noId && <YouTube videoId={videoId} opts={opts} onReady={_onReady} />}
         {noId && !videoId && <p>Please use the format of https://www.youtube.com/watch?v=ID</p>}
-        {previousVideos.length !== 0 && (
+        {videosArray.length !== 0 && (
           <PreviousVideos>
             <h2>Previous Videos</h2>
             <Previous>
-              {previousVideos.slice(0, 5).map((i) => (
+              {videosArray.slice(0, 5).map((i) => (
                 <img
                   src={`https://img.youtube.com/vi/${i}/hqdefault.jpg`}
                   key={i}
