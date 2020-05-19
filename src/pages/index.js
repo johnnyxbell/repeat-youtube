@@ -138,7 +138,10 @@ const Index = () => {
     typeof window !== 'undefined' &&
     window.localStorage.getItem('videoHistory') &&
     localStorage.getItem('videoHistory').split(',');
-  const videosArray = [...new Set(videos)];
+
+  const videosArray = videos.filter(function (item, pos) {
+    return videos.indexOf(item) === pos;
+  });
 
   return (
     <Container>
