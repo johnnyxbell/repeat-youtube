@@ -138,7 +138,7 @@ const Index = () => {
     typeof window !== 'undefined' &&
     window.localStorage.getItem('videoHistory') &&
     localStorage.getItem('videoHistory').split(',');
-  const videosArray = videos !== 0 && new Set(videos);
+  const videosArray = videos.length !== 0 && new Set(videos);
   const previousVideos = [...videosArray];
 
   return (
