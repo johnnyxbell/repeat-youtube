@@ -139,9 +139,11 @@ const Index = () => {
     window.localStorage.getItem('videoHistory') &&
     localStorage.getItem('videoHistory').split(',');
 
-  const videosArray = videos.filter(function (item, pos) {
-    return videos.indexOf(item) === pos;
-  });
+  const videosArray =
+    videos &&
+    videos.filter(function (item, pos) {
+      return videos.indexOf(item) === pos;
+    });
 
   return (
     <Container>
