@@ -87,13 +87,15 @@ const Index = () => {
 
   useEffect(() => {
     if (values.video.includes('youtube') || values.video.includes('youtu.be')) {
-      if (localStorage.getItem('videoHistory')) {
-        localStorage.setItem('videoHistory', [
-          localStorage.getItem('videoHistory'),
-          values.video.split('=')[1],
-        ]);
+      if (typeof window !== 'undefined' && window.localStorage.getItem('videoHistory')) {
+        typeof window !== 'undefined' &&
+          window.localStorage.setItem('videoHistory', [
+            typeof window !== 'undefined' && window.localStorage.getItem('videoHistory'),
+            values.video.split('=')[1],
+          ]);
       } else {
-        localStorage.setItem('videoHistory', values.video.split('=')[1]);
+        typeof window !== 'undefined' &&
+          window.localStorage.setItem('videoHistory', values.video.split('=')[1]);
       }
     }
   }, [values.video]);
