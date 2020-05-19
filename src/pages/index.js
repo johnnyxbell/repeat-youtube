@@ -169,7 +169,7 @@ const Index = () => {
         />
         {videoId && !noId && <YouTube videoId={videoId} opts={opts} onReady={_onReady} />}
         {noId && !videoId && <p>Please use the format of https://www.youtube.com/watch?v=ID</p>}
-        {videosArray.length !== 0 && (
+        {videos && videosArray.length !== 0 && (
           <PreviousVideos>
             <h2>Previous Videos</h2>
             <Previous>
