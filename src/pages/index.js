@@ -173,14 +173,17 @@ const Index = () => {
           <PreviousVideos>
             <h2>Previous Videos</h2>
             <Previous>
-              {videosArray.slice(0, 5).map((i) => (
-                <img
-                  src={`https://img.youtube.com/vi/${i}/hqdefault.jpg`}
-                  key={i}
-                  onClick={() => setValues({video: `https://www.youtube.com/watch?v=${i}`})}
-                  alt={i}
-                />
-              ))}
+              {videosArray
+                .slice(0, 5)
+                .reverse()
+                .map((i) => (
+                  <img
+                    src={`https://img.youtube.com/vi/${i}/hqdefault.jpg`}
+                    key={i}
+                    onClick={() => setValues({video: `https://www.youtube.com/watch?v=${i}`})}
+                    alt={i}
+                  />
+                ))}
             </Previous>
           </PreviousVideos>
         )}
