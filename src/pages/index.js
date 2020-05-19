@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import YouTube from 'react-youtube';
 import styled, {createGlobalStyle} from 'styled-components';
 import BackgroundImage from '../assets/images/moshpithome.jpg';
@@ -21,6 +21,32 @@ const Container = styled.div`
   background-size: cover;
   background-image: url(${BackgroundImage});
   font-family: 'Mukta', serif;
+`;
+
+const PreviousVideos = styled.div`
+  h2 {
+    padding: 0;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 20px auto 20px auto;
+    text-align: center;
+    color: white;
+  }
+  margin-bottom: 50px;
+`;
+
+const Previous = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 150px;
+    margin-right: 10px;
+    cursor: pointer;
+    &:last-child {
+      margin: 0;
+    }
+  }
 `;
 
 const Input = styled.input`
@@ -59,6 +85,19 @@ const Content = styled.div`
 const Index = () => {
   const [values, setValues] = useState({video: ''});
 
+  useEffect(() => {
+    if (values.video.includes('youtube') || values.video.includes('youtu.be')) {
+      if (localStorage.getItem('videoHistory')) {
+        localStorage.setItem('videoHistory', [
+          localStorage.getItem('videoHistory'),
+          values.video.split('=')[1],
+        ]);
+      } else {
+        localStorage.setItem('videoHistory', values.video.split('=')[1]);
+      }
+    }
+  }, [values.video]);
+
   const handleInputChange = (e, setValues) => {
     const {name, value} = e.target;
     setValues((prevState) => {
@@ -93,6 +132,11 @@ const Index = () => {
     event.target.playVideo();
   };
 
+  const videos =
+    localStorage.getItem('videoHistory') && localStorage.getItem('videoHistory').split(',');
+  const videosArray = new Set(videos);
+  const previousVideos = [...videosArray];
+
   return (
     <Container>
       <Helmet>
@@ -117,6 +161,21 @@ const Index = () => {
         />
         {videoId && !noId && <YouTube videoId={videoId} opts={opts} onReady={_onReady} />}
         {noId && !videoId && <p>Please use the format of https://www.youtube.com/watch?v=ID</p>}
+        {previousVideos.length !== 0 && (
+          <PreviousVideos>
+            <h2>Previous Videos</h2>
+            <Previous>
+              {previousVideos.slice(0, 5).map((i) => (
+                <img
+                  src={`https://img.youtube.com/vi/${i}/hqdefault.jpg`}
+                  key={i}
+                  onClick={() => setValues({video: `https://www.youtube.com/watch?v=${i}`})}
+                  alt={i}
+                />
+              ))}
+            </Previous>
+          </PreviousVideos>
+        )}
         <p>
           <a
             href='https://www.evvntly.com/?ref=repeatyoutube.dev'
